@@ -18,7 +18,7 @@ jobs:
         notebook: "testbook.ipynb"
         params: "params.json"
         isReport: False
-        poll: True
+        poll: False
     - uses: actions/upload-artifact@master
       if: always()
       with:
