@@ -6,7 +6,7 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Set up Python
       uses: actions/setup-python@v1
     - uses: yaananth/run-notebook@v1
@@ -26,13 +26,10 @@ jobs:
         path: ${{ RUNNER.temp }}/nb-runner
       env:
         RUNNER: ${{ toJson(runner) }}
-    - name: Commit files
+    - name: Commit and push files
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add --all
+        git add testbook.ipynb
         git commit -m "Update notebook" -a
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        git push origin master
