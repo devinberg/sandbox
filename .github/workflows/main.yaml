@@ -19,9 +19,9 @@ jobs:
         params: "params.json"
         isReport: False
         poll: False
-    - name: list directory
+    - name: move notebook
       run: |
-        dir
+        cp /home/runner/work/_temp/nb-runner/testbook.ipynb .
     - name: Commit and push files
       run: |
         git config --local user.email "action@github.com"
