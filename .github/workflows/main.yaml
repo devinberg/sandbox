@@ -19,6 +19,9 @@ jobs:
         params: "params.json"
         isReport: False
         poll: False
+    - name: list directory
+      run: |
+        dir
     - uses: actions/upload-artifact@master
       if: always()
       with:
