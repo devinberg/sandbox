@@ -17,8 +17,7 @@ jobs:
       with:
         notebook: "testbook.ipynb"
         params: "params.json"
-        isReport: False
-        poll: 'isReport'
+        isReport: True
     - name: move notebook
       run: |
         cp /home/runner/work/_temp/nb-runner/testbook.ipynb .
