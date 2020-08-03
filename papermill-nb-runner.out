@@ -151,3 +151,24 @@ print("date and time =", dt_string)
 INFO:papermill:date and time = 03/08/2020 01:16:45
 
 INFO:papermill:Ending Cell 2------------------------------------------
+INFO:papermill:Input Notebook:  testbook.ipynb
+INFO:papermill:Output Notebook: /home/runner/work/_temp/nb-runner/testbook.ipynb
+INFO:papermill:Executing notebook with kernel: python3
+INFO:papermill:Executing Cell 1---------------------------------------
+INFO:papermill:Contents: # Parameters
+secretsPath = "/home/runner/work/_temp/secrets.json"
+a = 27
+
+INFO:papermill:Ending Cell 1------------------------------------------
+INFO:papermill:Executing Cell 2---------------------------------------
+INFO:papermill:Contents: from datetime import datetime
+
+# datetime object containing current date and time
+now = datetime.now()
+
+# dd/mm/YY H:M:S
+dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+print("date and time =", dt_string)	
+INFO:papermill:date and time = 03/08/2020 01:26:41
+
+INFO:papermill:Ending Cell 2------------------------------------------
