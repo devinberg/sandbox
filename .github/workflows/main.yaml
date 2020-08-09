@@ -15,9 +15,12 @@ jobs:
     - name: run php
       env:
         osf_token: ${{ secrets.OSF_TOKEN }}
-        dummy: ${{ secrets.DUMMY}}
       run: |
-        echo $dummy
-        php test.php -p$dummy
-        dir
-        # php engrxiv_prints.php -p$osf_token
+        php engrxiv_prints.php -p$osf_token
+    - name: Commit and push files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "commit changes" -a
+        git push origin master
