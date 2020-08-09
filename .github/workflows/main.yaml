@@ -19,4 +19,5 @@ jobs:
       run: |
         echo $dummy
         php test.php -p$dummy
-        # php engrxiv_prints.php -posf_token
+        dir
+        # php engrxiv_prints.php -p$osf_token
