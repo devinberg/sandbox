@@ -15,5 +15,8 @@ jobs:
     - name: run php
       env:
         osf_token: ${{ secrets.OSF_TOKEN }}
+        dummy: ${{ secrets.DUMMY}}
       run: |
-        php engrxiv_prints.php -posf_token
+        echo $dummy
+        php test.php -pdummy
+        # php engrxiv_prints.php -posf_token
