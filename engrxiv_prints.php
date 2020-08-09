@@ -1,6 +1,6 @@
 <?php
 // Secrets
-$token = getopt("p:");
+$token = join(',', getopt("p:"));
 $provider = 'engrxiv';
 
 // Let's gather the list of preprints stored in the engrXiv repository.
