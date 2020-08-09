@@ -1,4 +1,4 @@
-name: Execute notebook
+name: Run php
 
 on: [push]
 
@@ -7,24 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v1
-    - uses: yaananth/run-notebook@v1
-      env:
-        RUNNER: ${{ toJson(runner) }}
-        SECRETS: ${{ toJson(secrets) }}
-        GITHUB: ${{ toJson(github) }}
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
       with:
-        notebook: "testbook.ipynb"
-        params: "params.json"
-        isReport: True
-    - name: move notebook
+        php-version: '7.4'
+      env:
+        osf_token: ${{ secrets.OSF_TOKEN }}
+    - name: run php
       run: |
-        cp /home/runner/work/_temp/nb-runner/testbook.ipynb .
-    - name: Commit and push files
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add testbook.ipynb
-        git commit -m "Update notebook" -a
-        git push origin master
+        php engrxiv_prints.php
