@@ -1,6 +1,6 @@
 <?php
 // Secrets
-$token = .$_ENV["osf_token"] .;
+$token = $_ENV["osf_token"];
 $provider = 'engrxiv';
 
 // Let's gather the list of preprints stored in the engrXiv repository.
