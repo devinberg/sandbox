@@ -15,4 +15,4 @@ jobs:
       env:
         osf_token: ${{ secrets.OSF_TOKEN }}
       run: |
-        php engrxiv_prints.php
+        php engrxiv_prints.php -posf_token
