@@ -1,7 +1,6 @@
 # Run all notebooks on every push
 on:
   push:
-  schedule:
 jobs:
   run:
     runs-on: ubuntu-latest
