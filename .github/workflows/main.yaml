@@ -16,9 +16,6 @@ jobs:
     - name: Execute notebook
       run: |
         papermill testbook.ipynb testbook.ipynb
-    - name: move notebook
-      run: |
-        cp /home/runner/work/_temp/nb-runner/testbook.ipynb .
     - name: Commit and push files
       run: |
         git config --local user.email "action@github.com"
